@@ -2,20 +2,21 @@
 
 int main()
 {
-    int n;
-    scanf("%d ", &n);
+    long long int n;
+    scanf("%lld ", &n);
 
-    int notas[n];
-    int soma = 0;
+    long long int notas[n];
+    long long int soma = 0;
 
     for (int i = 0; i < n; i++)
     {
-        scanf("%d ", &notas[i]);
+        scanf("%lld", &notas[i]);
         soma += notas[i];
     }
-    int media = soma / n;
 
-    int maiores = 0;
+    double media = (double)soma / n;
+    long long int maiores = 0;
+
     for (int i = 0; i < n; i++)
     {
         if (notas[i] > media)
@@ -24,9 +25,9 @@ int main()
         }
     }
 
-    if (maiores <= 0)
+    if (maiores == 0)
     {
-        printf("0 \n");
+        printf("0\n");
     }
     else
     {
@@ -34,8 +35,9 @@ int main()
         {
             if (notas[i] > media)
             {
-                printf("%d", notas[i]);
+                printf("%lld", notas[i]);
                 maiores--;
+                
                 if (maiores > 0)
                 {
                     printf(" ");
